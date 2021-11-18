@@ -338,7 +338,7 @@ static int hci_cmd_v1_daa(struct i3c_hci *hci)
 			ret = -ETIME;
 			break;
 		}
-		if (RESP_STATUS(xfer[0].response) == RESP_ERR_NACK &&
+		if (RESP_STATUS(xfer[0].response) == RESP_ERR_NACK ||
 		    RESP_STATUS(xfer[0].response) == 1) {
 			ret = 0;  /* no more devices to be assigned */
 			break;
